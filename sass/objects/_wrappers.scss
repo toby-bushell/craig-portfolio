@@ -1,0 +1,29 @@
+/*================================
+=            WRAPPERS            =
+================================*/
+
+.o-site-container {
+  // Sticky Footer
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.o-site-content {
+  flex: 1 0 auto;
+  width: 100%;
+}
+
+// Susy grid container
+.o-layout-container{
+  @include container;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+  padding-left: 5%;
+  padding-right: 5%;
+  width: 90%;
+  * {
+    box-sizing: border-box;
+  }
+}

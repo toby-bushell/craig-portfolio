@@ -1,0 +1,12 @@
+.c-sidebar{
+  @include rem(margin-bottom, $base-spacing-unit * 2);
+  @include breakpoint($break-tablet){
+    @include span(3 of 12 last);
+  }
+  >:last-child {
+    margin-bottom: 0;
+  }
+}
+.c-sidebar__title{
+
+}

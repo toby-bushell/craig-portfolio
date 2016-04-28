@@ -1,0 +1,14 @@
+.c-promo{
+  background-color: $color-promo-background;
+  border: 1px solid $color-brand-primary;
+  @include rem(padding, $base-spacing-unit);
+  @include rem(margin-bottom, $base-spacing-unit * 2);
+  @include breakpoint($break-mobile-land){
+    @include gallery(6 of 12);
+  }
+}
+.c-promo__content {
+  >:last-child {
+    margin-bottom: 0;
+  }
+}

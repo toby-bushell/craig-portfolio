@@ -1,0 +1,10 @@
+.c-portfolio-holder {
+    @include span(4 of 12);
+
+}
+
+.c-portfolio-item{
+
+  padding: gutter() 0;
+
+}

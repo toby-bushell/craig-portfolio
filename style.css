@@ -1,0 +1,15 @@
+/*
+Theme Name: Boris - Portfolio
+Theme URI: http://wordpress.org/themes/blankslate
+Author: Boris Digital
+Author URI: http://borisdigital.co.uk/
+Version: 1.0.0
+
+*/
+
+/*
+Using ./css/styles.css for main css file.
+get_stylesheet_uri function has been modified in wp-includes/theme.php
+to use the new style.css path
+
+*/

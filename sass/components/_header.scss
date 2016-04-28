@@ -1,0 +1,7 @@
+.c-site-header{
+  flex: none;
+  background-color: $color-page-head-background;
+  border-bottom: 1px solid $color-grey-light;
+  padding: $base-spacing-unit 0;
+  @include rem(margin-bottom, $base-spacing-unit);
+}

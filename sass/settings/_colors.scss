@@ -1,0 +1,57 @@
+/*===============================
+=            COLOURS            =
+===============================*/
+
+
+// Set up a colour palette which allows us to theme the entire project from one
+// location.
+
+// Colour palette.
+$color-brand-primary:               #378bb5;
+$color-brand-primary-highlight:     lighten($color-brand-primary, 5%);
+$color-brand-primary-shadow:        darken($color-brand-primary,  5%);
+$color-brand-primary-background:    lighten($color-brand-primary, 60%);
+
+$color-brand-secondary:             #abc123;
+$color-brand-secondary-highlight:   lighten($color-brand-secondary, 5%);
+$color-brand-secondary-shadow:      darken($color-brand-secondary,  5%);
+
+
+$color-grey:                        #666;
+$color-grey-dark:                   #333;
+$color-grey-light:                  #C5C3C3;
+$color-red:                         #D45151;
+
+
+// Reassign literal variables to meaningful ones.
+$color-page-text:                       $color-grey-dark;
+$color-page-background:                 #EAEAEA;
+
+$color-logo:                            $color-brand-primary;
+
+$color-links:                           inherit;
+$color-links-prose:                     $color-brand-primary;
+$color-links-prose-hover:               $color-brand-primary-shadow;
+
+$color-page-head:                       $color-brand-primary;
+$color-page-head-background:            #FFF;
+
+
+$color-page-foot:                       #fff;
+$color-page-foot-background:            $color-grey-dark;;
+
+$color-panel-background:                #fff;
+$color-panel-inverse:                   #fff;
+$color-panel-inverse-background:        $color-brand-primary;
+$color-panel-link:                      $color-grey-dark;
+$color-panel-link-hover:                $color-brand-secondary-shadow;
+
+$color-headline:                        $color-grey-light;
+
+$color-sub-content-bg:                  rgba(0, 0, 0, 0.05);
+$color-sub-content:                     $color-grey;
+
+$color-promo-background:                $color-brand-primary-background;
+
+$color-button-red: #FFFFFF;
+$color-button-red-background: $color-red;

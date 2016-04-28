@@ -1,0 +1,14 @@
+/*=============================
+=            LINKS            =
+=============================*/
+
+
+a {
+  color: $color-links;
+  @include font-weight(bold);
+  text-decoration: none;
+  transition: all 50ms ease-out;
+  @include hocus() {
+    text-decoration: underline;
+  }
+}

@@ -1,0 +1,23 @@
+.c-panel{
+  @include rem(margin-bottom, $base-spacing-unit * 2);
+  @include breakpoint($break-mobile-land){
+    @include gallery(4 of 12);
+  }
+}
+.c-panel__media{
+  @include rem(margin-bottom, $base-spacing-unit / 2);
+}
+.c-panel__content {
+  >:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.c-panel__link {
+  text-decoration: none;
+  color: $color-brand-primary;
+  @include hocus() {
+    text-decoration: none;
+    color: $color-brand-primary-shadow;
+  }
+}
