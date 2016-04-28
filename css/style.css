@@ -458,6 +458,15 @@ ul, ol,
 dd {
   margin-left: 20px; }
 
+h1, h2, h3, h4, h5, h1 > a, h2 > a, h3 > a, h4 > a, h5 > a {
+  color: #25272b;
+  font-family: 'Lato', sans-serif;
+  font-weight: 900;
+  letter-spacing: 0.03em; }
+
+p {
+  color: #92959a; }
+
 /**
  * ELEMENTS
  *
@@ -479,7 +488,7 @@ html {
   font-size: 0.875em;
   line-height: 1.42857;
   font-family: Lato, sans-serif;
-  background-color: #EAEAEA;
+  background-color: #fff;
   color: #333;
   height: 100%; }
 
@@ -536,8 +545,6 @@ a {
   text-decoration: none;
   -webkit-transition: all 50ms ease-out;
   transition: all 50ms ease-out; }
-  a:hover, a:focus {
-    text-decoration: underline; }
 
 /*=============================
 =            LISTS            =
@@ -697,6 +704,8 @@ blockquote {
   margin: 0;
   padding: 0;
   list-style: none; }
+  .o-list-inline ul {
+    list-style: none; }
 
 .o-list-inline__item {
   display: inline-block; }
@@ -755,14 +764,20 @@ blockquote {
  */
 /*------------------------------------*  #NAV-PRIMARY
 \*------------------------------------*/
+.c-nav-primary {
+  padding-top: 20px; }
+
 .c-nav-primary__link {
   display: inline-block;
-  padding-right: 20px;
-  padding-left: 20px;
-  font-weight: 400; }
-  .c-nav-primary__link.is-active {
-    text-decoration: underline;
-    cursor: default; }
+  margin: 0 20px; }
+  .c-nav-primary__link a {
+    font-family: 'Lato', sans-serif;
+    font-weight: 900;
+    letter-spacing: 0.03em;
+    font-size: 16px; }
+
+.current_page_item {
+  border-bottom: 3px solid #25272b; }
 
 .c-site-footer {
   -webkit-box-flex: 0;
@@ -771,7 +786,8 @@ blockquote {
           flex: none;
   background-color: #FFF;
   border-top: 1px solid #C5C3C3;
-  padding: 20px 0; }
+  padding: 20px 0;
+  clear: both; }
 
 .c-site-footer__content > :last-child {
   margin-bottom: 0; }
@@ -782,10 +798,10 @@ blockquote {
       -ms-flex: none;
           flex: none;
   background-color: #FFF;
-  border-bottom: 1px solid #C5C3C3;
-  padding: 20px 0;
-  margin-bottom: 20px;
-  margin-bottom: 1.42857rem; }
+  padding: 60px 0 30px 0;
+  text-align: center; }
+  .c-site-header h1 {
+    font-size: 42px; }
 
 .c-content {
   margin-bottom: 40px;
@@ -842,14 +858,14 @@ blockquote {
 
 .c-panel__link {
   text-decoration: none;
-  color: #378bb5; }
+  color: #25272b; }
   .c-panel__link:hover, .c-panel__link:focus {
     text-decoration: none;
-    color: #317ca1; }
+    color: #191b1d; }
 
 .c-promo {
-  background-color: white;
-  border: 1px solid #378bb5;
+  background-color: #bcbfc6;
+  border: 1px solid #25272b;
   padding: 20px;
   padding: 1.42857rem;
   margin-bottom: 40px;
@@ -876,7 +892,7 @@ blockquote {
   text-decoration: none;
   border-radius: 5px;
   display: inline-block;
-  border: 1px solid #378bb5;
+  border: 1px solid #25272b;
   padding: 10px 20px;
   text-transform: uppercase;
   font-weight: 600;
@@ -885,7 +901,7 @@ blockquote {
   line-height: 1.25; }
   .c-btn:hover, .c-btn:focus {
     text-decoration: none;
-    background-color: #378bb5;
+    background-color: #25272b;
     color: #FFF; }
 
 .c-btn--red {
@@ -905,7 +921,49 @@ blockquote {
   padding-right: 10px; }
 
 .c-portfolio-item {
+  list-style: none;
   padding: 10px 0; }
+  .c-portfolio-item img {
+    width: 100%;
+    height: auto; }
+  .c-portfolio-item:hover .c-portfolio-info, .c-portfolio-item:focus .c-portfolio-info {
+    max-height: 100px;
+    opacity: 1; }
+
+.c-portfolio-holder-column1 {
+  padding-left: 40px; }
+
+.c-portfolio-holder-column3 {
+  padding-right: 40px; }
+
+.c-portfolio-info {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+  text-align: center;
+  padding: 0 20px; }
+
+.c-portfolio-info__caption {
+  font-family: 'Lato', sans-serif;
+  font-weight: 900;
+  letter-spacing: 0.03em;
+  font-size: 20px;
+  padding-top: 30px;
+  line-height: 1em;
+  margin-bottom: 5px; }
+
+.c-portfolio-info__description {
+  position: relative;
+  padding-bottom: 15px; }
+  .c-portfolio-info__description:before {
+    content: "";
+    position: absolute;
+    width: 8%;
+    bottom: 0;
+    left: 46%;
+    border-bottom: 3px solid #25272b; }
 
 /**
  * TRUMPS

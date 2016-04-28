@@ -10,7 +10,7 @@ html {
   font-size: ($base-font-size / 16px) * 1em;
   line-height: $base-line-height / $base-font-size;
   @include font-family(sans-serif);
-  background-color: $color-page-background;
+  background-color: $color-white;
   color: $color-page-text;
   height: 100%;
 }

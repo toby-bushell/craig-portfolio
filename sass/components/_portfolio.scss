@@ -2,9 +2,54 @@
     @include span(4 of 12);
 
 }
-
 .c-portfolio-item{
-
+  list-style: none;
   padding: gutter() 0;
+  img{
+    width: 100%;
+    height: auto;
+  }
+  @include hocus() {
+    .c-portfolio-info{
+      max-height: 100px;
+      opacity: 1;
+    }
+  };
+}
 
+.c-portfolio-holder-column1 {
+  padding-left: ($base-spacing-unit * 2)
+}
+.c-portfolio-holder-column3 {
+  padding-right: ($base-spacing-unit * 2)
+}
+
+.c-portfolio-info {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: all .3s ease;
+  text-align: center;
+  padding: 0 $base-spacing-unit;
+}
+
+.c-portfolio-info__caption {
+  @include header-font();
+   font-size: 20px;
+   padding-top: ($base-spacing-unit + 10 );
+   line-height: 1em;
+   margin-bottom: $small-spacing-unit;
+}
+
+.c-portfolio-info__description {
+  position: relative;
+  padding-bottom: $med-spacing-unit;
+  &:before {
+    content: "";
+    position: absolute;
+    width: 8%; // Content width will be 320 meaning 25.6px
+    bottom: 0;
+    left: 46%;
+    border-bottom: 3px solid $color-brand-primary;
+  }
 }

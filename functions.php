@@ -18,6 +18,7 @@ function blankslate_load_scripts()
 {
     wp_enqueue_script('jquery');
 }
+add_theme_support( 'post-thumbnails' ); 
 add_action('comment_form_before', 'blankslate_enqueue_comment_reply_script');
 function blankslate_enqueue_comment_reply_script()
 {

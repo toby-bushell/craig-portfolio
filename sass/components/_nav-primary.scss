@@ -2,17 +2,25 @@
   #NAV-PRIMARY
 \*------------------------------------*/
 
-.c-nav-primary {}
+.c-nav-primary {
+  padding-top: $base-spacing-unit;
+}
 
 .c-nav-primary__item {}
 
 .c-nav-primary__link {
   display: inline-block;
-  padding-right: $base-spacing-unit;
-  padding-left: $base-spacing-unit;
-  @include font-weight(normal);
-  &.is-active {
-    text-decoration: underline;
-    cursor: default;
+  margin: 0 $base-spacing-unit;
+
+
+  a{
+    @include header-font();
+    font-size: 16px;
   }
+}
+
+// Wordpress own
+
+.current_page_item {
+  border-bottom: 3px solid $color-brand-primary;
 }

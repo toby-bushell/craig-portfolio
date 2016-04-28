@@ -106,7 +106,7 @@ gulp.task('browser-sync', function() {
       If you comment out the next line BrowserSync will provide the JS code that needs to be
       inserted into the HTML/Template for it to still work on your normal server & URL.
     */
-      proxy: "http://localhost:8888/wp"
+      proxy: "http://localhost/wp/"
   });
 });
 

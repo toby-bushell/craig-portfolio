@@ -8,7 +8,7 @@ a {
   @include font-weight(bold);
   text-decoration: none;
   transition: all 50ms ease-out;
-  @include hocus() {
-    text-decoration: underline;
-  }
+  // @include hocus() {
+  //   text-decoration: underline;
+  // }
 }
