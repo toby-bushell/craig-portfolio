@@ -13,13 +13,24 @@
 //         'main-menu' => __('Main Menu', 'blankslate')
 //     ));
 // }
+
+
+
 add_action('wp_enqueue_scripts', 'blankslate_load_scripts');
 function blankslate_load_scripts()
 {
     wp_enqueue_script('jquery');
 }
-add_theme_support( 'post-thumbnails' ); 
+add_theme_support( 'post-thumbnails' );
 add_action('comment_form_before', 'blankslate_enqueue_comment_reply_script');
+
+// Add styles.js
+
+function add_main_js() {
+wp_register_script('my-amazing-script', get_template_directory_uri() . '/js/script.min.js','','1.1', true);
+wp_enqueue_script('my-amazing-script');
+}
+add_action( 'wp_enqueue_scripts', 'add_main_js' );  
 function blankslate_enqueue_comment_reply_script()
 {
     if (get_option('thread_comments')) {

@@ -93,7 +93,7 @@ gulp.task('scripts', function() {
   return gulp.src('./js/src/*.js')
     .pipe(plumber(plumberErrorHandler))
     .pipe(concat('script.min.js'))
-    .pipe(stripDebug())
+    // .pipe(stripDebug())
     .pipe(gulpif(isProd, uglify()))
     .pipe(gulp.dest('./js/'))
     .pipe(notify({ message: 'Scripts task complete: combined, debug stripped, uglified' }));
@@ -111,10 +111,10 @@ gulp.task('browser-sync', function() {
 });
 
 
-gulp.task('bs', ['sass', 'browser-sync', 'jshint', 'sizereport'], function () {
+gulp.task('bs', ['sass', 'browser-sync', 'jshint', 'sizereport', 'scripts'], function () {
    //do stuff after 'sass', 'sprite', 'browser-sync' etc are done.
   gulp.watch('./sass/**/*.{scss,sass}', ['sass'])
-  gulp.watch('./js/src/**/*.js', ['jshint']);
+  gulp.watch('./js/src/**/*.js', ['jshint','scripts']);
   gulp.watch('./css/*.css', [ 'sizereport'] );
 });
 

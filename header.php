@@ -5,6 +5,7 @@
       <meta name="viewport" content="width=device-width" />
       <link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_uri(); ?>" />
       <?php wp_head(); ?>
+         
       <link href='https://fonts.googleapis.com/css?family=Lato:400,900,700' rel='stylesheet' type='text/css'>
    </head>
    <body>

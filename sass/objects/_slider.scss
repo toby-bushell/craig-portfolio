@@ -1,0 +1,47 @@
+/*================================
+=            Slider             =
+================================*/
+
+
+// .o-slider__holder {
+//   height: 450px;
+// }
+.o-slider__single {
+  height: 400px;
+  margin: $base-spacing-unit;
+  @media (max-width: $break-mobile-land){
+    height: auto;
+  }
+}
+.o-slider__image {
+  height: 100%;
+}
+
+.o-slider__pagination {
+  background: none;
+  border: none;
+  display: inline-block;
+  outline: none;
+  padding: $small-spacing-unit;
+  span {
+    display: block;
+    height: 2px;
+    width: 10px;
+    background: $color-brand-primary;
+  }
+}
+
+// Slick slider style changes
+ul.slick-dots {
+  list-style: none;
+  text-align: center;
+  li {
+    margin: 0 $small-spacing-unit;
+    @include hocus() {
+      outline: none;
+
+
+    }
+    display: inline-block;
+  }
+}

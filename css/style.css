@@ -37,6 +37,74 @@
 /*==================================
 =            TYPOGRAPHY            =
 ==================================*/
+/* Slider */
+.slick-slider {
+  position: relative;
+  display: block;
+  box-sizing: border-box;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -ms-touch-action: pan-y;
+  touch-action: pan-y;
+  -webkit-tap-highlight-color: transparent; }
+
+.slick-list {
+  position: relative;
+  display: block;
+  margin: 0;
+  padding: 0; }
+  .slick-list:focus {
+    outline: none; }
+  .slick-list.dragging {
+    cursor: pointer;
+    cursor: hand; }
+
+.slick-slider .slick-track,
+.slick-slider .slick-list {
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0); }
+
+.slick-track {
+  position: relative;
+  left: 0;
+  top: 0;
+  display: block; }
+  .slick-track:before, .slick-track:after {
+    content: "";
+    display: table; }
+  .slick-track:after {
+    clear: both; }
+  .slick-loading .slick-track {
+    visibility: hidden; }
+
+.slick-slide {
+  float: left;
+  height: 100%;
+  min-height: 1px;
+  display: none; }
+  [dir="rtl"] .slick-slide {
+    float: right; }
+  .slick-slide img {
+    display: block; }
+  .slick-slide.slick-loading img {
+    display: none; }
+  .slick-slide.dragging img {
+    pointer-events: none; }
+  .slick-initialized .slick-slide {
+    display: block; }
+  .slick-loading .slick-slide {
+    visibility: hidden; }
+  .slick-vertical .slick-slide {
+    display: block;
+    height: auto;
+    border: 1px solid transparent; }
+
+.slick-arrow.slick-hidden {
+  display: none; }
+
 /**
  * GENERIC
  *
@@ -492,9 +560,6 @@ html {
   color: #333;
   height: 100%; }
 
-body {
-  height: 100%; }
-
 /*================================
 =            HEADINGS            =
 ================================*/
@@ -632,7 +697,8 @@ blockquote {
   -webkit-flex-direction: column;
       -ms-flex-direction: column;
           flex-direction: column;
-  height: 100%; }
+  height: 100%;
+  overflow: hidden; }
 
 .o-site-content {
   -webkit-box-flex: 1;
@@ -645,10 +711,8 @@ blockquote {
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
-  box-sizing: content-box;
-  padding-left: 5%;
-  padding-right: 5%;
-  width: 90%; }
+  width: 100%;
+  box-sizing: content-box; }
   .o-layout-container:after {
     content: " ";
     display: block;
@@ -754,6 +818,40 @@ blockquote {
   bottom: 0;
   /* [1] */
   left: 0; }
+
+/*================================
+=            Slider             =
+================================*/
+.o-slider__single {
+  height: 400px;
+  margin: 20px; }
+  @media (max-width: 32em) {
+    .o-slider__single {
+      height: auto; } }
+
+.o-slider__image {
+  height: 100%; }
+
+.o-slider__pagination {
+  background: none;
+  border: none;
+  display: inline-block;
+  outline: none;
+  padding: 5px; }
+  .o-slider__pagination span {
+    display: block;
+    height: 2px;
+    width: 10px;
+    background: #25272b; }
+
+ul.slick-dots {
+  list-style: none;
+  text-align: center; }
+  ul.slick-dots li {
+    margin: 0 5px;
+    display: inline-block; }
+    ul.slick-dots li:hover, ul.slick-dots li:focus {
+      outline: none; }
 
 /**
  * COMPONENTS
@@ -926,7 +1024,7 @@ blockquote {
   .c-portfolio-item img {
     width: 100%;
     height: auto; }
-  .c-portfolio-item:hover .c-portfolio-info, .c-portfolio-item:focus .c-portfolio-info {
+  .c-portfolio-item .c-portfolio-info.hovered {
     max-height: 100px;
     opacity: 1; }
 
@@ -957,13 +1055,25 @@ blockquote {
 .c-portfolio-info__description {
   position: relative;
   padding-bottom: 15px; }
-  .c-portfolio-info__description:before {
+  .c-portfolio-info__description::before {
     content: "";
     position: absolute;
+    visibility: hidden;
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+    -webkit-transition: all .3s ease-out;
+    transition: all .3s ease-out;
+    -webkit-transition-delay: .3s;
+            transition-delay: .3s;
     width: 8%;
     bottom: 0;
     left: 46%;
     border-bottom: 3px solid #25272b; }
+
+.c-portfolio-info.hovered .c-portfolio-info__description::before {
+  visibility: visible;
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1); }
 
 /**
  * TRUMPS

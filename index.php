@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<section id="content" role="main">
+
 
   <!-- Column 1 -->
 <div class="c-portfolio-holder c-portfolio-holder-column1">
@@ -65,7 +65,7 @@
 
 
   <!-- <?php get_template_part( 'nav', 'below' ); ?> -->
-</section>
+
 
 
 <?php get_footer(); ?>

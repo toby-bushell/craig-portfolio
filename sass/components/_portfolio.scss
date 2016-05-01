@@ -9,12 +9,12 @@
     width: 100%;
     height: auto;
   }
-  @include hocus() {
-    .c-portfolio-info{
+
+    .c-portfolio-info.hovered{
       max-height: 100px;
       opacity: 1;
-    }
-  };
+
+  }
 }
 
 .c-portfolio-holder-column1 {
@@ -44,12 +44,25 @@
 .c-portfolio-info__description {
   position: relative;
   padding-bottom: $med-spacing-unit;
-  &:before {
+  &::before {
     content: "";
     position: absolute;
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all .3s ease-out;
+    transition-delay: .3s;
     width: 8%; // Content width will be 320 meaning 25.6px
     bottom: 0;
     left: 46%;
     border-bottom: 3px solid $color-brand-primary;
   }
+}
+
+// Using Hover class that is added by js on hover
+
+.c-portfolio-info.hovered {
+  .c-portfolio-info__description::before {
+  visibility: visible;
+  transform: scaleX(1);
+ }
 }
