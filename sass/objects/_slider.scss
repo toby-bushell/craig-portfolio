@@ -109,11 +109,11 @@ ul.slick-dots {
   z-index: 6;
 }
 .o-slider__arrows-prev {
-  left: 0;
+  left: 10px;
   cursor: pointer;
 }
 .o-slider__arrows-next {
-  right: 0;
+  right: 10px;
   cursor: pointer;
   transform: scaleX(-1);
 }

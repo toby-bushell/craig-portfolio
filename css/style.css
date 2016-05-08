@@ -737,7 +737,7 @@ blockquote {
   position: relative; }
 
 .o-layout-container {
-  padding-bottom: 60px;
+  padding-bottom: 100px;
   position: relative;
   -webkit-box-flex: 1;
   -webkit-flex: 1;
@@ -934,11 +934,11 @@ ul.slick-dots {
   z-index: 6; }
 
 .o-slider__arrows-prev {
-  left: 0;
+  left: 10px;
   cursor: pointer; }
 
 .o-slider__arrows-next {
-  right: 0;
+  right: 10px;
   cursor: pointer;
   -webkit-transform: scaleX(-1);
           transform: scaleX(-1); }
@@ -1124,7 +1124,7 @@ ul.slick-dots {
     width: 100%;
     height: auto; }
   .c-portfolio-item .c-portfolio-info.hovered {
-    max-height: 100px;
+    max-height: 140px;
     opacity: 1; }
 
 @media (min-width: 40.063em) {
