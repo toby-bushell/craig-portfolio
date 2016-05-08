@@ -13,10 +13,9 @@ get_header(); ?>
           <div class="o-site-container--slim o-site-container--center">
               <?php the_content();?>
 
-
-              <div class="o-social">
-                <a href="https://www.linkedin.com/in/fitzgeraldcraig" target="_blank"><img class="o-soclial__icon" src="http://icons.iconarchive.com/icons/danleech/simple/24/linkedin-icon.png" alt="craig fitzgerald linkein"></a>
-              </div>
+            <a href="https://www.linkedin.com/in/fitzgeraldcraig" target="_blank">
+              <div class="o-social"></div>
+            </a>
         </div>
       </div>
 

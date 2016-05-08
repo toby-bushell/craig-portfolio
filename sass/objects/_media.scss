@@ -26,3 +26,15 @@
 .o-media__body {
   width: 100%;
 }
+
+.o-social {
+  background: url(../images/linkedin.png);
+  background-repeat: no-repeat;
+  height: 24px;
+  width: 24px;
+  margin: 0 auto;
+  overflow: hidden;
+  &:hover {
+    background-position:  0 -24px;
+  }
+}
