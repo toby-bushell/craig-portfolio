@@ -11,7 +11,7 @@ function arrow_resize() {
     var $slider_height = $('.slick-active').height();
 
 
-    var $arrows_from_top = ($slider_height / 2) - 20; // 20 is half the arrow height
+    var $arrows_from_top = ($slider_height / 2) + 20; // 20 is half the arrow height
     $('.o-slider__arrows').css('top', $arrows_from_top);
 
 }
@@ -24,7 +24,7 @@ $(document).ready(function() {
 // Check if slider has loaded
 var $slider_height = $('.slick-active').height();
 if ($slider_height > 1){
-  
+
     arrow_resize();
 }
 
