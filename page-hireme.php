@@ -15,7 +15,7 @@ get_header(); ?>
 
 
               <div class="o-social">
-                <img class="o-soclial__icon" src="http://icons.iconarchive.com/icons/danleech/simple/24/linkedin-icon.png">
+                <a href="https://www.linkedin.com/in/fitzgeraldcraig" target="_blank"><img class="o-soclial__icon" src="http://icons.iconarchive.com/icons/danleech/simple/24/linkedin-icon.png" alt="craig fitzgerald linkein"></a>
               </div>
         </div>
       </div>
