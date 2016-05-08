@@ -6,6 +6,7 @@
 // Global function to work out arrow location
 function arrow_resize() {
 
+  console.log('arrow resize');
       // working out heights for arrows
     var $slider_height = $('.slick-active').height();
 
@@ -15,15 +16,18 @@ function arrow_resize() {
 
 }
 
-if(jQuery().slick) {
 
-    arrow_resize();
-}
 
 // Fire on page load
 $(document).ready(function() {
 
-  arrow_resize();
+// Check if slider has loaded
+var $slider_height = $('.slick-active').height();
+if ($slider_height > 1){
+  
+    arrow_resize();
+}
+
 
 
 
@@ -63,9 +67,6 @@ $(document).ready(function() {
 });
 
 
-
-  // By Chris Coyier & tweaked by Mathias Bynens
-
   $(function() {
   	// Find all YouTube videos
   	var $allVideos = $("iframe[src^='https://www.youtube.com']"),
@@ -89,9 +90,9 @@ $(document).ready(function() {
   	// When the window is resized
   	// (You'll probably want to debounce this)
   	$(window).resize(function() {
-      arrow_resize(); // Adjust arrow location
+      // arrow_resize(); // Adjust arrow location
 
-    
+
       var $el = $(this);
   		var newWidth = $fluidEl.width();
 
