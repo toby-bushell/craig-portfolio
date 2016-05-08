@@ -22,6 +22,12 @@
   top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
+  @media(max-width: $break-tablet){
+    position: relative;
+    top: 0;
+    left: 0;
+    transform: none;
+  }
 }
 .o-site-content {
   flex: 1 0 auto;
