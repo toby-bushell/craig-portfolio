@@ -32,7 +32,7 @@
 <!-- END Column 1 -->
 
 <!-- Column 2 -->
-<div class="c-portfolio-holder c-portfolio-holder-column1 >">
+<div class="c-portfolio-holder c-portfolio-holder-column2 >">
 <?php $the_query = new WP_Query(array(
   'cat'     => 4,
   'meta_key'=> 'post-order',
@@ -64,7 +64,7 @@
 <!-- END Column 2 -->
 
 <!-- Column 3 -->
-<div class="c-portfolio-holder c-portfolio-holder-column1 >">
+<div class="c-portfolio-holder c-portfolio-holder-column3 >">
 <?php $the_query = new WP_Query(array(
   'cat'     => 5,
   'meta_key'=> 'post-order',
