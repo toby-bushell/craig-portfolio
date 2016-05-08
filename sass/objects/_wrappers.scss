@@ -6,22 +6,43 @@
   // Sticky Footer
   display: flex;
   flex-direction: column;
-  height: 100%;
-  overflow: hidden;
+  min-height: 100%;
 }
 
+.o-site-container--slim {
+  max-width: 100%;
+  width: 552px;
+  padding: 0 $base-spacing-unit;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.o-site-container--center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 .o-site-content {
   flex: 1 0 auto;
   width: 100%;
 }
 
+.position-wrapper {
+  position: relative;
+}
 // Susy grid container
 .o-layout-container{
+  padding-bottom: $base-spacing-unit *3 ;
+  position: relative;
+  flex: 1;
   @include container;
-  width: 100%;
   -moz-box-sizing: content-box;
   -webkit-box-sizing: content-box;
   box-sizing: content-box;
+  padding-left: 5%;
+  padding-right: 5%;
+  width: 90%;
   * {
     box-sizing: border-box;
   }

@@ -1,6 +1,8 @@
 .c-portfolio-holder {
     @include span(4 of 12);
-
+    @media (max-width: $break-tablet) {
+      @include span(12 of 12);
+    }
 }
 .c-portfolio-item{
   list-style: none;
@@ -17,20 +19,24 @@
   }
 }
 
+
 .c-portfolio-holder-column1 {
-  padding-left: ($base-spacing-unit * 2)
+  @media(min-width: $break-tablet){
+    padding-left: ($base-spacing-unit * 2);
+  }
 }
 .c-portfolio-holder-column3 {
-  padding-right: ($base-spacing-unit * 2)
+  padding-right: ($base-spacing-unit * 2);
 }
 
 .c-portfolio-info {
   max-height: 0;
   overflow: hidden;
   opacity: 0;
-  transition: all .3s ease;
+  transition: max-height .3s , opacity .8s ease;
   text-align: center;
   padding: 0 $base-spacing-unit;
+
 }
 
 .c-portfolio-info__caption {
@@ -41,28 +47,84 @@
    margin-bottom: $small-spacing-unit;
 }
 
+// Adding underline to animate after info
 .c-portfolio-info__description {
   position: relative;
-  padding-bottom: $med-spacing-unit;
-  &::before {
-    content: "";
-    position: absolute;
-    visibility: hidden;
-    transform: scaleX(0);
-    transition: all .3s ease-out;
-    transition-delay: .3s;
-    width: 8%; // Content width will be 320 meaning 25.6px
-    bottom: 0;
-    left: 46%;
-    border-bottom: 3px solid $color-brand-primary;
-  }
+  padding-bottom: ($med-spacing-unit + 3); // 3px for the thickness of the underline
+  display: inline-block;
+
+
+  // &::before {
+  //   content: "";
+  //   position: absolute;
+  //   visibility: hidden;
+  //   transform: scaleX(0);
+  //   transition: all .3s ease-out;
+  //   transition-delay: .3s;
+  //   width: 100%;
+  //   bottom: 0;
+  //   left: 0;
+  //   border-bottom: 3px solid $color-brand-primary;
+  // }
+}
+.c-portfolio-info__underline {
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  bottom: 0;
+  left: 0;
+  background: $color-brand-primary;
+  transform: scaleX(0);
+  transition: all .3s ease-out;
+  transition-delay: .3s;
 }
 
-// Using Hover class that is added by js on hover
-
+// Using Hover class that is added by js on hover to animate underline
 .c-portfolio-info.hovered {
-  .c-portfolio-info__description::before {
+  .c-portfolio-info__underline {
   visibility: visible;
   transform: scaleX(1);
  }
+}
+
+// Fade out portfolio not in focus
+.c-portfolio-item--not-active {
+  img {
+    // filter: opacity(.4) brightness(70%);
+  }
+}
+
+/******** Single portfolio page ********/
+
+// Adding underline to single portfolio info
+.c-portfolio-item--single {
+  text-align: center;
+  max-width: 100%;
+  font-size: 15px;
+    .c-portfolio-info__caption{
+      font-size: 24px;
+    }
+    .c-portfolio-info__underline {
+      visibility: visible;
+      transform: scaleX(1);
+    }
+  .c-portfolio-info__description {
+    padding-bottom: ($base-spacing-unit + 3); // add 3px for thickness of underline
+    @include nav-font();
+
+  }
+}
+
+.c-portfolio__content {
+  @include body-font();
+  // padding-top: $base-spacing-unit;
+}
+
+.c-portfolio__separator {
+  width: 50%;
+  margin: 0 auto;
+  border-top: 1px solid $color-brand-secondary;
+  padding-top: $base-spacing-unit *2;
+  opacity: .5;
+  margin-top: $base-spacing-unit;
 }

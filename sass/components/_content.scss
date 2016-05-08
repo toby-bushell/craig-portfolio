@@ -1,12 +1,8 @@
-.c-content{
-  @include rem(margin-bottom, $base-spacing-unit * 2);
-  @include breakpoint($break-tablet){
-    @include span(9 of 12);
-  }
-  >:last-child {
-    margin-bottom: 0;
-  }
-}
-.c-content__title{
 
+.c-content__container {
+  @extend .c-portfolio-item--single;
+}
+
+.c-content__image {
+  padding-top: $med-spacing-unit;
 }

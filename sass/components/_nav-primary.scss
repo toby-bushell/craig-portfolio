@@ -14,13 +14,20 @@
 
 
   a{
-    @include header-font();
+    @include nav-font();
     font-size: 16px;
+    &:hover {
+      @include header-font;
+    }
   }
+
 }
 
 // Wordpress own
 
-.current_page_item {
+.current_page_item, .current_page_parent {
   border-bottom: 3px solid $color-brand-primary;
+  a{
+      @include header-font();
+  }
 }

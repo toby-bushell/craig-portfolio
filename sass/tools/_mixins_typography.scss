@@ -24,6 +24,16 @@
   font-weight: 900;
   letter-spacing: 0.03em;
 }
+@mixin nav-font(){
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+@mixin body-font(){
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.03em;
+}
 
 
 // Generate a font-size and baseline-compatible line-height.

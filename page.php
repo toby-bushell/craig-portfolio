@@ -1,22 +1,30 @@
 <?php get_header(); ?>
-<section id="content" role="main">
+
    <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-   <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-      <header class="header">
-         <h1 class="entry-title"><?php the_title(); ?></h1>
-         <?php edit_post_link(); ?>
-      </header>
 
 
-      <div class="o-layout-container">
+
+      <div class="o-site-container o-layout-container">
+          <div class="o-site-container--slim">
+            <?php the_content();?>
 
 
+
+            <?php $aboutImage = get_field('about-image');
+
+            if($aboutImage):?>
+
+              <div class="c-content__image">
+                <img src="<?php echo $aboutImage['url'];?>" alt="<?php echo $aboutImage['alt'];?>">
+              </div>
+
+            <?php endif; ?> <!-- Endif for image -->
+        </div>
       </div>
 
 
-   </article>
+
 
    <?php endwhile; endif; ?>
-</section>
 
 <?php get_footer(); ?>
