@@ -5,17 +5,33 @@
     }
 }
 .c-portfolio-item{
+  cursor: pointer;
+  position: relative;
   list-style: none;
   padding: gutter() 0;
+  transition: .2s all ease-out;
+  a {
+    display: block;
+  }
   img{
     width: 100%;
     height: auto;
   }
 
-    .c-portfolio-info.hovered{
-      max-height: 140px;
+  &.active {
+   .o-overlay {
+     z-index: 2;
+     background-color: rgba(0, 0, 0, .75);
+   }
+    img {
+      filter: grayscale(100%);
+    }
+    .c-portfolio-info {
       opacity: 1;
-
+    }
+  }
+  .c-portfolio-item__wrapper {
+    position: relative;
   }
 }
 
@@ -30,12 +46,21 @@
 }
 
 .c-portfolio-info {
-  max-height: 0;
+  position: absolute;
+  top: 50%;
   overflow: hidden;
   opacity: 0;
   transition: max-height .3s , opacity .8s ease;
   text-align: center;
   padding: 0 $base-spacing-unit;
+  transform: translateY(-50%);
+  text-align: center;
+  width: 100%;
+  z-index: 5;
+
+  .c-portfolio-info__caption, .c-portfolio-info__description {
+    color: $color-white;
+  }
 
 }
 
@@ -69,10 +94,10 @@
 }
 .c-portfolio-info__underline {
   position: absolute;
-  width: 100%;
+  width: 75%;
   height: 3px;
   bottom: 0;
-  left: 0;
+  left: 12.5%;
   background: $color-brand-primary;
   transform: scaleX(0);
   transition: all .3s ease-out;
@@ -80,7 +105,7 @@
 }
 
 // Using Hover class that is added by js on hover to animate underline
-.c-portfolio-info.hovered {
+.c-portfolio-item.active {
   .c-portfolio-info__underline {
   visibility: visible;
   transform: scaleX(1);
@@ -113,6 +138,7 @@
     @include nav-font();
 
   }
+
 }
 
 .c-portfolio__content {

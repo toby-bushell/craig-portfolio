@@ -8,7 +8,7 @@
 
       <link href='https://fonts.googleapis.com/css?family=Lato:400,900,700' rel='stylesheet' type='text/css'>
    </head>
-   <body <?php body_class( $class ); ?>>
+   <body>
       <div class="hfeed o-site-container" >
 
           <header class="c-site-header" role="banner">
@@ -21,4 +21,3 @@
 
          </nav>
       </header>
-      

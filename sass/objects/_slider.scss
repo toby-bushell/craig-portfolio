@@ -15,6 +15,10 @@
   @media (max-width: $break-mobile-land){
     height: auto;
   }
+
+  img {
+    width: 100%;
+  }
 }
 .o-slider__image {
   margin: 0 auto;
@@ -89,16 +93,17 @@ ul.slick-dots {
 }
 .slick-arrow {
   list-style: none;
-  width: $base-spacing-unit;
-  height: 40px;
-  line-height: 40px;
+  border-radius: 50%;
+  padding: 10px 16px;
+  text-align: center;
+  background-color: rgba(255,255,255,.3);
 }
 .o-slider__arrows {
   height: 40px;
   width: 100%;
   margin: 0;
   position: absolute;
-  bottom: 50%;
+  top: 50%;
   padding: 0 50px;
   @media(max-width: $break-tablet) {
     display: none;

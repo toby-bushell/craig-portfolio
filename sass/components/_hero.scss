@@ -1,0 +1,71 @@
+.c-hero {
+  position: relative;
+}
+
+.c-hero__image {
+  background-position: center;
+  width: 100%;
+  display: none;
+  background-size: 0;
+  position: absolute;
+
+  @include breakpoint($break-tablet){
+    height: 450px;
+    background-size: cover;
+    display: block;
+  }
+}
+
+.c-hero__image-mobile {
+
+  @include breakpoint($break-tablet){
+    display: none;
+  }
+  img {
+      width: 100%;
+  }
+}
+
+.c-hero__content {
+  padding: $base-spacing-unit;
+  border-radius: 10px;
+  background-color: $color-white;
+
+  @include breakpoint($break-tablet){
+    position: relative;
+    margin-top: 375px;
+  }
+}
+
+.c-hero__title {
+  text-align: center;
+
+  h1 {
+    display: inline-block;
+    padding-bottom: 7px;
+    border-bottom: 2px solid $color-white;
+  }
+}
+
+.c-hero__sub-title {
+  margin: 0 auto;
+  text-align: center;
+
+  h4 {
+    line-height: 1.25;
+  }
+
+    @include breakpoint($break-tablet){
+      max-width: 50%;
+    }
+}
+.c-hero__info {
+  margin: 0 auto;
+  text-align: center;
+  line-height: 1.75;
+
+    @include breakpoint($break-tablet){
+      width: 75%;
+      max-width: 500px;
+    }
+}

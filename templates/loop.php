@@ -14,17 +14,21 @@
    $caption = get_field('port-caption');?>
 
    <!-- Start portfolio content -->
-    <li class="c-portfolio-item">
+   <li class="c-portfolio-item">
+     <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+     <div class="c-portfolio-item__wrapper">
+       <div class="o-overlay"></div>
 
-        <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
-           <?php the_post_thumbnail(); ?>
-           <div class="c-portfolio-info">
-             <h3 class="c-portfolio-info__caption"><?php echo get_the_title() ; ?></h3>
-             <p class="c-portfolio-info__description"><?php echo $caption; ?><span style="background: <?php the_field('port-colour');?>" class="c-portfolio-info__underline"></span></p>
-           </div>
-       </a>
 
-     </li>
+            <?php the_post_thumbnail(); ?>
+            <div class="c-portfolio-info">
+              <h3 class="c-portfolio-info__caption"><?php echo get_the_title() ; ?></h3>
+              <p class="c-portfolio-info__description"><?php echo $caption; ?><span style="background: <?php the_field('port-colour');?>" class="c-portfolio-info__underline"></span></p>
+            </div>
+
+     </div>
+     </a>
+    </li>
 
   <?php endwhile; ?>  <?php wp_reset_query(); ?>
 
@@ -45,17 +49,21 @@
    $caption = get_field('port-caption');?>
 
    <!-- Start portfolio content -->
-    <li class="c-portfolio-item">
+   <li class="c-portfolio-item">
+     <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+     <div class="c-portfolio-item__wrapper">
+       <div class="o-overlay"></div>
 
-        <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
-           <?php the_post_thumbnail(); ?>
-           <div class="c-portfolio-info">
-             <h3 class="c-portfolio-info__caption"><?php echo get_the_title() ; ?></h3>
-             <p class="c-portfolio-info__description"><?php echo $caption; ?><span style="background: <?php the_field('port-colour');?>" class="c-portfolio-info__underline"></span></p>
-           </div>
-       </a>
 
-     </li>
+            <?php the_post_thumbnail(); ?>
+            <div class="c-portfolio-info">
+              <h3 class="c-portfolio-info__caption"><?php echo get_the_title() ; ?></h3>
+              <p class="c-portfolio-info__description"><?php echo $caption; ?><span style="background: <?php the_field('port-colour');?>" class="c-portfolio-info__underline"></span></p>
+            </div>
+
+     </div>
+     </a>
+    </li>
 
   <?php endwhile; ?>  <?php wp_reset_query(); ?>
 
@@ -77,17 +85,21 @@
    $caption = get_field('port-caption');?>
 
    <!-- Start portfolio content -->
-    <li class="c-portfolio-item">
+   <li class="c-portfolio-item">
+     <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+     <div class="c-portfolio-item__wrapper">
+       <div class="o-overlay"></div>
 
-        <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
-           <?php the_post_thumbnail(); ?>
-           <div class="c-portfolio-info">
-             <h3 class="c-portfolio-info__caption"><?php echo get_the_title() ; ?></h3>
-             <p class="c-portfolio-info__description"><?php echo $caption; ?><span style="background: <?php the_field('port-colour');?>" class="c-portfolio-info__underline"></span></p>
-           </div>
-       </a>
 
-     </li>
+            <?php the_post_thumbnail(); ?>
+            <div class="c-portfolio-info">
+              <h3 class="c-portfolio-info__caption"><?php echo get_the_title() ; ?></h3>
+              <p class="c-portfolio-info__description"><?php echo $caption; ?><span style="background: <?php the_field('port-colour');?>" class="c-portfolio-info__underline"></span></p>
+            </div>
+
+     </div>
+     </a>
+    </li>
 
   <?php endwhile; ?>  <?php wp_reset_query(); ?>
 

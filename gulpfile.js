@@ -119,7 +119,7 @@ gulp.task('bs', ['sass', 'browser-sync', 'jshint', 'sizereport', 'scripts'], fun
 });
 
 
-gulp.task('default', ['sass', 'jshint', 'sizereport'], function () {
+gulp.task('default', ['sass', 'jshint', 'sizereport', 'scripts'], function () {
    //do stuff after 'sass', 'jshint' etc are done.
   gulp.watch('./sass/**/*.{sass,scss}', ['sass'])
   gulp.watch('./js/src/**/*.js', ['jshint']);

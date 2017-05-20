@@ -17,6 +17,14 @@
   text-align: center;
 }
 
+.o-site-container--med {
+  width: 100%;
+  max-width: 1000px;
+  padding: 0 $base-spacing-unit;
+  margin: 0 auto;
+  text-align: center;
+}
+
 .o-site-container--center {
   position: absolute;
   top: 40%;

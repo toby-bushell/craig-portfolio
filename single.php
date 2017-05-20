@@ -1,54 +1,61 @@
 <?php get_header(); ?>
 
+<!-- Hero Image -->
+<?php
+$heroImage = get_field("hero_image");
+$heroTitle = get_field("hero_title");
+$heroSubTitle = get_field("hero_sub_title");
+$heroInfo = get_field("hero_info");
+?>
+
+<div class="c-hero">
+  <div class="c-hero__image" style="background-image: url(<?php echo $heroImage["url"];?>)"></div>
+  <div class="c-hero__image-mobile"><img src="<?php echo $heroImage["url"];?>" alt="<?php echo $heroImage["alt"];?>"></div>
+
+  <div class="o-site-container--med">
+    <div class="c-hero__content">
+      <div class="c-hero__title">
+        <h1 style="border-color: <?php the_field('port-colour');?>"><?php echo $heroTitle; ?></h1>
+      </div>
+      <div class="c-hero__sub-title">
+        <h4><?php echo $heroSubTitle; ?></h4>
+      </div>
+      <div class="c-hero__info">
+        <p><?php echo $heroInfo; ?></p>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- Single Portfolio Slider -->
 
+<?php
+  if( have_rows('repeater_portfolio_images')):
+  while ( have_rows('repeater_portfolio_images') ) : the_row();
 
+    $images = get_sub_field('portfolio_images');
+    $info = get_sub_field('gallery_information'); ?>
 
-<script src="<?php bloginfo('template_directory');?>/js/slick.js"></script>
-<div class="position-wrapper">
-  <div class="o-slider__holder">
-
-    <!-- If youtube video place first in slider -->
-    <?php $youtube = get_field('port-youtube');?>
-    <?php if($youtube): ?>
-      <div class="o-slider__single">
-      <?php echo wp_oembed_get($youtube); ?>
-    </div>
-    <?php endif; // Close loops for optional content ?>
-
-
-  <!-- Loop images for slider -->
-    <?php if( $images = get_field('portfolio_gallery') ):?>
-     <?php foreach( $images as $image ): ?>
-      <div class="o-slider__single">
-         <img class="o-slider__image" src="<?php echo $image['url']?>" alt="<?php echo $image['alt'];?>">
+    <!-- Loop of gallery / images -->
+    <div class="position-wrapper">
+      <?php include "templates/slider.php"; ?><!-- position relative div -->
+      <div class="c-portfolio__content">
+        <div class="o-site-container--slim">
+          <p><?php echo $info; ?></p>
+        </div>
       </div>
-      <?php endforeach;?>
-
     </div>
 
-
-
-  <!-- Slider Prev and next arrows, initiated below -->
-    <ul class="o-slider__arrows">
-      <li class="o-slider__arrows-prev">
-        <img src="<?php bloginfo('template_directory');?>/images/arrow.png" alt="previous slider arrow">
-      </li>
-      <li class="o-slider__arrows-next">
-        <img src="<?php bloginfo('template_directory');?>/images/arrow.png" alt="forward slider arrow">
-      </li>
-    </ul>
-    <!-- End arrows -->
-</div> <!-- position relative div -->
-
-
+    <?php endwhile;?>
   <?php endif;?> <!-- End slider loop -->
+
+  <script src="<?php bloginfo('template_directory');?>/js/slick.js"></script>
+
 
   <script type="text/javascript">
   jQuery(document).ready(function(){
     jQuery('.o-slider__holder').slick({
-      dots: true,
+      dots: false,
       infinite: true,
       speed: 300,
       prevArrow: jQuery('.o-slider__arrows-prev'),
@@ -65,49 +72,7 @@
 
 <!-- Start single post loop -->
 
-<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-
-    <div class="c-portfolio-item--single o-site-container--slim">
-          <!-- Header -->
-          <h2 class="c-portfolio-info__caption"><?php echo get_the_title() ; ?></h2>
-
-          <!-- Caption -->
-          <?php $caption = get_field('port-caption');?>
-          <?php if($caption) : ?>
-            <p class="c-portfolio-info__description"><?php echo $caption; ?><span style="background: <?php the_field('port-colour');?>" class="c-portfolio-info__underline"></span></p>
-          <?php endif; ?>
-
-
-          <?php $picker = get_field('port-colour'); ?> <!-- Colour Picker -->
-
-          <!-- Get Colour picker for custom colouring -->
-          <?php if($picker) : ?>
-            <style type="text/css">
-               .slick-active .o-slider__pagination  {
-                   color: <?php the_field('port-colour');?>;
-                 }
-               .c-portfolio-item--single .c-portfolio-info__description::before {
-                   border-color: <?php the_field('port-colour');?>;
-               }
-             </style>
-           <?php endif; ?> <!-- End colour picker -->
-
-
-
-    <div class="c-portfolio__content">
-        <?php the_content(); ?>
-    </div>
-
-    <!-- More Info -->
-    <?php $moreInfo = get_field('more-info');?>
-    <?php if($moreInfo) : ?>
-      <p class="c-portfolio-info__content"><?php echo $moreInfo ?></p>
-    <?php endif; ?>
-
-
-  </div>
-
-<?php endwhile; endif;  ?> <!-- End loop -->
+ <!-- End loop -->
 <?php wp_reset_query();?>
 </div> <!-- slim layout -->
 <div class="c-portfolio__separator"></div>

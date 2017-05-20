@@ -28,11 +28,9 @@ if ($slider_height > 1){
     arrow_resize();
 }
 
-
-
-
-
       // Add hover to portfolio for animation
+
+      /*
     if($(window).width() > 640 ){
 
       $('.c-portfolio-item').on('mouseenter mouseleave', function(){
@@ -57,13 +55,12 @@ if ($slider_height > 1){
         $('.c-portfolio-info', this).addClass('hovered');
       });
     }
+*/
 
-
-
-
-
-
-
+$('.c-portfolio-item').on('hover', function(){
+  console.log('hover');
+  $(this).toggleClass('active');
+});
 });
 
 
