@@ -27,7 +27,7 @@
 }
 
 .c-hero__content {
-  padding: $base-spacing-unit;
+  padding: 20px 0px;
   border-radius: 10px;
   background-color: $color-white;
 
@@ -42,17 +42,22 @@
 
   h1 {
     display: inline-block;
-    padding-bottom: 7px;
+    padding-bottom: 4px;
     border-bottom: 2px solid $color-white;
+    @media (max-width: 400px) {
+      font-size: 30px;
+    }
   }
 }
 
 .c-hero__sub-title {
   margin: 0 auto;
   text-align: center;
+  padding-top: 7px;
 
   h4 {
     line-height: 1.25;
+    font-weight: 700;
   }
 
     @include breakpoint($break-tablet){
@@ -60,12 +65,17 @@
     }
 }
 .c-hero__info {
+  font-size: 17px;
   margin: 0 auto;
   text-align: center;
   line-height: 1.75;
+  @media (max-width: 400px) {
+    font-size: 15px;
+    line-height: 1.7em;
+  }
 
     @include breakpoint($break-tablet){
       width: 75%;
-      max-width: 500px;
+      max-width: 600px;
     }
 }

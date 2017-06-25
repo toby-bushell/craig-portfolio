@@ -3,18 +3,6 @@
 
 
 
-// Global function to work out arrow location
-function arrow_resize() {
-
-  console.log('arrow resize');
-      // working out heights for arrows
-    var $slider_height = $('.slick-active').height();
-
-
-    var $arrows_from_top = ($slider_height / 2) + 20; // 20 is half the arrow height
-    $('.o-slider__arrows').css('top', $arrows_from_top);
-
-}
 
 
 
@@ -87,7 +75,7 @@ $('.c-portfolio-item').on('hover', function(){
   	// When the window is resized
   	// (You'll probably want to debounce this)
   	$(window).resize(function() {
-      // arrow_resize(); // Adjust arrow location
+      arrow_resize(); // Adjust arrow location
 
 
       var $el = $(this);
@@ -119,5 +107,44 @@ $('.c-portfolio-item').on('hover', function(){
   	}).resize();
 
   });
+
+  // Slick slider
+
+      $('.o-slider__holder').each(function(index, slider) {
+
+        $(this).slick({
+        dots: true,
+        infinite: true,
+        speed: 300,
+        prevArrow: $('.o-slider__arrows-prev-'+index),
+        nextArrow: $('.o-slider__arrows-next-'+index),
+        responsive: [
+          /*  {
+            breakpoint: 512,
+            settings: 'unslick'
+          } */
+        ]
+      });
+
+    });
+
+    // Global function to work out arrow location
+    function arrow_resize() {
+
+      $('.o-slider__holder').each(function(index, slider) {
+
+
+      console.log('arrow resize', index);
+          // working out heights for arrows
+        var $slider_height = $('.o-slider__image', this).height();
+
+        var arrowHeight = $('.o-slider__arrows-prev img').height();
+        var $arrows_from_top = ($slider_height / 2) - (arrowHeight / 2); // 20 is half the arrow height
+        $('.o-slider__arrows-'+index).css('top', $arrows_from_top);
+
+        console.log('arrowHeight', arrowHeight);
+        console.log('slider_height', $slider_height);
+      });
+    }
 
 })(jQuery);

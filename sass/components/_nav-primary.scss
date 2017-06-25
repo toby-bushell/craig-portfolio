@@ -9,25 +9,41 @@
 .c-nav-primary__item {}
 
 .c-nav-primary__link {
+  position: relative;
   display: inline-block;
   margin: 0 $base-spacing-unit;
 
 
   a{
     @include nav-font();
+    font-weight: 500;
     font-size: 16px;
-    &:hover {
-      @include header-font;
-    }
   }
 
 }
 
+.c-nav-primary__link a:after {
+  content: '';
+  position: absolute;
+  left:0;
+  top: 50%;
+  width:0;
+  border-top:1px solid black;
+  -webkit-transition: width 0.25s ease-out;
+}
+
+.c-nav-primary__link a:hover:after {
+  width:100%;
+}
+
 // Wordpress own
 
-.current_page_item, .current_page_parent {
-  border-bottom: 3px solid $color-brand-primary;
-  a{
-      @include header-font();
-  }
+.current_page_item a:after, .current_page_parent a:after {
+  content: '';
+  position: absolute;
+  left:0;
+  top: 50%;
+  width:100%;
+  border-top:1px solid black;
+  -webkit-transition: width 0.25s ease-out;
 }

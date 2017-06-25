@@ -25,6 +25,7 @@ h1,h2,h3,h4,h5, h1 > a, h2 > a, h3 > a, h4 > a, h5 > a{
 p {
   @include body-font;
   color: $color-brand-primary;
+  line-height: 1.75;
 }
 
 b,strong {

@@ -50,7 +50,7 @@
                 autoplaySpeed: 3000,
                 centerMode: false,
                 centerPadding: '50px',
-                cssEase: 'ease',
+                cssEase: 'ease-out',
                 customPaging: function(slider, i) {
                     return '<button class="o-slider__pagination" type="button" data-role="none" role="button" aria-required="false" tabindex="0"><span></span></button>';
                 },
@@ -2506,13 +2506,13 @@
 
     };
 
-    Slick.prototype.unslick = function(fromBreakpoint) {
+    /* Slick.prototype.unslick = function(fromBreakpoint) {
 
         var _ = this;
         _.$slider.trigger('unslick', [_, fromBreakpoint]);
         _.destroy();
 
-    };
+    }; */
 
     Slick.prototype.updateArrows = function() {
 

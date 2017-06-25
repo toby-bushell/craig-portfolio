@@ -3,6 +3,7 @@
 <!-- Hero Image -->
 <?php
 $heroImage = get_field("hero_image");
+$heroImageMob = get_field("hero_image_mobile");
 $heroTitle = get_field("hero_title");
 $heroSubTitle = get_field("hero_sub_title");
 $heroInfo = get_field("hero_info");
@@ -10,7 +11,7 @@ $heroInfo = get_field("hero_info");
 
 <div class="c-hero">
   <div class="c-hero__image" style="background-image: url(<?php echo $heroImage["url"];?>)"></div>
-  <div class="c-hero__image-mobile"><img src="<?php echo $heroImage["url"];?>" alt="<?php echo $heroImage["alt"];?>"></div>
+  <div class="c-hero__image-mobile"><img src="<?php echo $heroImageMob["url"];?>" alt="<?php echo $heroImageMob["alt"];?>"></div>
 
   <div class="o-site-container--med">
     <div class="c-hero__content">
@@ -30,45 +31,103 @@ $heroInfo = get_field("hero_info");
 <!-- Single Portfolio Slider -->
 
 <?php
-  if( have_rows('repeater_portfolio_images')):
-  while ( have_rows('repeater_portfolio_images') ) : the_row();
+$counter = 0;
+if( have_rows('portfolio_content') ):
 
-    $images = get_sub_field('portfolio_images');
-    $info = get_sub_field('gallery_information'); ?>
+     // loop through the rows of data
+    while ( have_rows('portfolio_content') ) : the_row();
 
-    <!-- Loop of gallery / images -->
-    <div class="position-wrapper">
-      <?php include "templates/slider.php"; ?><!-- position relative div -->
-      <div class="c-portfolio__content">
-        <div class="o-site-container--slim">
-          <p><?php echo $info; ?></p>
-        </div>
-      </div>
-    </div>
-
-    <?php endwhile;?>
-  <?php endif;?> <!-- End slider loop -->
-
-  <script src="<?php bloginfo('template_directory');?>/js/slick.js"></script>
+        if( get_row_layout() == 'portfolio_content_gallery' ):
 
 
-  <script type="text/javascript">
-  jQuery(document).ready(function(){
-    jQuery('.o-slider__holder').slick({
-      dots: false,
-      infinite: true,
-      speed: 300,
-      prevArrow: jQuery('.o-slider__arrows-prev'),
-      nextArrow: jQuery('.o-slider__arrows-next'),
-      responsive: [
-        {
-          breakpoint: 512,
-          settings: 'unslick'
+
+            //  Single Portfolio Slider
+            if( have_rows('repeater_porfolio_images')):
+            while ( have_rows('repeater_porfolio_images') ) : the_row();
+
+
+                $images = get_sub_field('portfolio_images');
+                $info = get_sub_field('gallery_information');
+
+
+                 ?>
+
+                <!-- Loop of gallery / images -->
+                <div class="position-wrapper">
+                <?php include "templates/slider.php"; ?>
+                <?php $counter++; ?>
+                <!-- position relative div -->
+                <?php if ($info) : ?>
+                  <div class="c-portfolio__content">
+                      <div class="o-site-container--slim">
+                          <p><?php echo $info; ?></p>
+                      </div>
+                  </div>
+                <?php endif; ?>
+                </div>
+
+                <?php endwhile;?>
+            <?php endif;?> <!-- End slider loop -->
+
+         <!-- End Slider -->
+
+      <?php elseif( get_row_layout() == 'portfolio_content_video' ):?>
+          <?php
+
+
+          // get iframe HTML
+          $iframe = get_sub_field('portfolio_video');
+
+
+          // use preg_match to find iframe src
+          preg_match('/src="(.+?)"/', $iframe, $matches);
+          $src = $matches[1];
+
+          if(get_sub_field('loop_id')){
+            $params = array(
+              'controls'    => 0,
+              'hd'        => 1,
+              'autohide'    => 1,
+              'autoplay'    => 0,
+              'loop'    => 1,
+              'playlist' => get_sub_field('loop_id'),
+              'showinfo'    => 0,
+              'rel'         => 0,
+              'iv_load_policy' => 3
+            );
+          } else {
+              $params = array(
+                'controls'    => 0,
+                'hd'        => 1,
+                'autohide'    => 1,
+                'autoplay'    => 0,
+                'loop'    => 1,
+                'showinfo'    => 0,
+                'rel'         => 0,
+                'iv_load_policy' => 3
+              );
         }
-      ]
-    });
-  });
-</script> <!-- End Slider -->
+
+
+          // add extra params to iframe src
+
+
+          $new_src = add_query_arg($params, $src);
+
+          $iframe = str_replace($src, $new_src, $iframe);
+
+
+          // add extra attributes to iframe html
+          $attributes = 'frameborder="0"';
+
+          $iframe = str_replace('></iframe>', ' ' . $attributes . '></iframe>', $iframe);
+          ?>
+
+          <div class="o-media-embed"><?php echo $iframe;?></div>
+          <?php
+        endif;
+    endwhile;
+endif ?>
 
 <!-- Start single post loop -->
 
@@ -76,6 +135,10 @@ $heroInfo = get_field("hero_info");
 <?php wp_reset_query();?>
 </div> <!-- slim layout -->
 <div class="c-portfolio__separator"></div>
+<div class "c-portfolio__separator-header" style="text-align:center">
+  <h4>See more work</h4>
+</div>
 <?php get_template_part('templates/loop');?>
+
 
 <?php get_footer(); ?>

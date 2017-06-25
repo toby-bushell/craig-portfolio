@@ -15,7 +15,7 @@
 
    <!-- Start portfolio content -->
    <li class="c-portfolio-item">
-     <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+     <a href="<?php the_permalink(); ?>">
      <div class="c-portfolio-item__wrapper">
        <div class="o-overlay"></div>
 
@@ -50,7 +50,7 @@
 
    <!-- Start portfolio content -->
    <li class="c-portfolio-item">
-     <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+     <a href="<?php the_permalink(); ?>">
      <div class="c-portfolio-item__wrapper">
        <div class="o-overlay"></div>
 
@@ -86,7 +86,7 @@
 
    <!-- Start portfolio content -->
    <li class="c-portfolio-item">
-     <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+     <a href="<?php the_permalink(); ?>">
      <div class="c-portfolio-item__wrapper">
        <div class="o-overlay"></div>
 
