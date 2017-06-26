@@ -107,6 +107,7 @@ ul.slick-dots {
   margin: 0;
   position: absolute;
   top: 50%;
+  top: calc(50% - 36px);
   padding: 0 50px;
 /*  @media(max-width: $break-tablet) {
     display: none;

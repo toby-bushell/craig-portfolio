@@ -13,7 +13,7 @@ $(document).ready(function() {
 var $slider_height = $('.slick-active').height();
 if ($slider_height > 1){
 
-    arrow_resize();
+    // arrow_resize();
 }
 
       // Add hover to portfolio for animation
@@ -75,7 +75,7 @@ $('.c-portfolio-item').on('hover', function(){
   	// When the window is resized
   	// (You'll probably want to debounce this)
   	$(window).resize(function() {
-      arrow_resize(); // Adjust arrow location
+      // arrow_resize(); // Adjust arrow location
 
 
       var $el = $(this);
